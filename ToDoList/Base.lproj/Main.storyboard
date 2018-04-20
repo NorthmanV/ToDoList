@@ -70,12 +70,20 @@
                                                         <constraint firstAttribute="width" constant="36" id="dgs-A7-2kg"/>
                                                     </constraints>
                                                     <state key="normal" image="Unchecked"/>
+                                                    <state key="selected" image="Checked"/>
+                                                    <connections>
+                                                        <action selector="isCompleteButtonTapped:" destination="2X3-u5-a0v" eventType="touchUpInside" id="uNN-oG-FCb"/>
+                                                    </connections>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Remind me to..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBA-hl-hYY">
                                                     <rect key="frame" x="52" y="7" width="315" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="returnPressed:" destination="2X3-u5-a0v" eventType="primaryActionTriggered" id="0Z5-MI-0jp"/>
+                                                        <action selector="textEditingChanged:" destination="2X3-u5-a0v" eventType="editingChanged" id="OgC-2f-4Lb"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -107,7 +115,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlS-ah-AWy">
                                                     <rect key="frame" x="317" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.14509803921568626" green="0.48627450980392156" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="kDM-8v-5F4">
@@ -119,16 +127,21 @@
                                                         <!--2018-04-18 18:53:15 +0000-->
                                                     </date>
                                                     <locale key="locale" localeIdentifier="en_GB"/>
+                                                    <connections>
+                                                        <action selector="datePickerChanged:" destination="2X3-u5-a0v" eventType="primaryActionTriggered" id="VTa-kB-eZ3"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="HlS-ah-AWy" firstAttribute="trailing" secondItem="PQg-j4-jDU" secondAttribute="trailingMargin" id="1LI-D7-QSH"/>
                                                 <constraint firstItem="o5y-gk-7pt" firstAttribute="top" secondItem="PQg-j4-jDU" secondAttribute="topMargin" id="3sQ-fM-og0"/>
                                                 <constraint firstAttribute="trailing" secondItem="kDM-8v-5F4" secondAttribute="trailing" id="8KP-b8-R18"/>
+                                                <constraint firstAttribute="trailing" secondItem="o5y-gk-7pt" secondAttribute="trailingMargin" constant="295.5" id="Le5-Q0-xtL"/>
                                                 <constraint firstItem="HlS-ah-AWy" firstAttribute="top" secondItem="PQg-j4-jDU" secondAttribute="topMargin" id="bfk-rU-x5w"/>
                                                 <constraint firstItem="kDM-8v-5F4" firstAttribute="leading" secondItem="PQg-j4-jDU" secondAttribute="leading" id="jfQ-9R-Adm"/>
+                                                <constraint firstItem="HlS-ah-AWy" firstAttribute="leading" relation="lessThanOrEqual" secondItem="PQg-j4-jDU" secondAttribute="leadingMargin" constant="301" id="pk1-r5-Axb"/>
                                                 <constraint firstItem="kDM-8v-5F4" firstAttribute="top" secondItem="o5y-gk-7pt" secondAttribute="bottom" id="vMG-q8-k5y"/>
-                                                <constraint firstItem="o5y-gk-7pt" firstAttribute="leading" secondItem="PQg-j4-jDU" secondAttribute="leadingMargin" id="zAe-aa-8ha"/>
+                                                <constraint firstItem="o5y-gk-7pt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PQg-j4-jDU" secondAttribute="leadingMargin" id="zAe-aa-8ha"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -183,6 +196,7 @@
                         <outlet property="dueDatePickerView" destination="kDM-8v-5F4" id="fMH-Is-OFM"/>
                         <outlet property="isCompleteButton" destination="SFL-ec-i2e" id="irf-Dy-Fp8"/>
                         <outlet property="notesTextView" destination="tfa-Mu-5uA" id="4qb-wz-3lU"/>
+                        <outlet property="saveButton" destination="h80-Be-0qo" id="D5k-Wu-vYB"/>
                         <outlet property="titleTextField" destination="QBA-hl-hYY" id="EPo-4R-hSC"/>
                     </connections>
                 </tableViewController>
@@ -225,6 +239,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Checked" width="44" height="44"/>
         <image name="Unchecked" width="44" height="44"/>
     </resources>
 </document>
