@@ -26,6 +26,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="2X3-u5-a0v" kind="show" identifier="showDetails" id="PEN-g8-Nlt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -49,7 +52,7 @@
         <scene sceneID="jS3-il-qK1">
             <objects>
                 <tableViewController id="2X3-u5-a0v" customClass="ToDoViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="EQq-kf-FTW">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="EQq-kf-FTW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -219,7 +222,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rj4-Fe-HV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1318" y="123"/>
+            <point key="canvasLocation" x="1350" y="513"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z5b-cd-yRh">
@@ -242,4 +245,7 @@
         <image name="Checked" width="44" height="44"/>
         <image name="Unchecked" width="44" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ov0-sb-yHU"/>
+    </inferredMetricsTieBreakers>
 </document>

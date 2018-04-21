@@ -22,7 +22,15 @@ class ToDoViewController: UITableViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        dueDatePickerView.date = Date().addingTimeInterval(24 * 60 * 60)
+        if let toDo = toDo {
+            navigationItem.title = "To-Do"
+            titleTextField.text = toDo.title
+            isCompleteButton.isSelected = toDo.isComplete
+            dueDatePickerView.date = toDo.dueDate
+            notesTextView.text = toDo.notes
+        } else {
+            dueDatePickerView.date = Date().addingTimeInterval(24 * 60 * 60)
+        }
         updateDueDateLabel(date: dueDatePickerView.date)
         updateSaveButtonState()
     }
@@ -67,6 +75,7 @@ class ToDoViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         switch indexPath {
         case [1,0]:
             isPickerHidden = !isPickerHidden
