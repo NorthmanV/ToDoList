@@ -14,19 +14,48 @@
         <scene sceneID="lus-iE-QMZ">
             <objects>
                 <tableViewController id="bzY-do-UlE" customClass="ToDoTableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rHg-ob-nrZ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rHg-ob-nrZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCell" id="TkQ-YL-II7">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCell" id="TkQ-YL-II7" customClass="ToDoCell" customModule="ToDoList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TkQ-YL-II7" id="2c0-QG-cbr">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdj-n6-gx2">
+                                            <rect key="frame" x="8" y="3" width="36" height="36"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="36" id="Neg-kg-jZa"/>
+                                                <constraint firstAttribute="width" constant="36" id="UEP-ft-qeJ"/>
+                                            </constraints>
+                                            <state key="normal" image="Unchecked"/>
+                                            <state key="selected" image="Checked"/>
+                                            <connections>
+                                                <action selector="isCompleteButtonTapped:" destination="TkQ-YL-II7" eventType="touchUpInside" id="ftY-ZQ-xki"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nl2-Fg-hyd">
+                                            <rect key="frame" x="52" y="11" width="307" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="nl2-Fg-hyd" secondAttribute="trailing" id="TeP-0P-I15"/>
+                                        <constraint firstItem="nl2-Fg-hyd" firstAttribute="centerY" secondItem="2c0-QG-cbr" secondAttribute="centerY" id="V6v-LT-GvJ"/>
+                                        <constraint firstItem="qdj-n6-gx2" firstAttribute="centerY" secondItem="2c0-QG-cbr" secondAttribute="centerY" id="jwN-ZN-mly"/>
+                                        <constraint firstItem="nl2-Fg-hyd" firstAttribute="leading" secondItem="qdj-n6-gx2" secondAttribute="trailing" constant="8" id="mMO-d1-UIT"/>
+                                        <constraint firstItem="qdj-n6-gx2" firstAttribute="leading" secondItem="2c0-QG-cbr" secondAttribute="leading" constant="8" id="vnw-7X-T7e"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="isCompleteButton" destination="qdj-n6-gx2" id="N5C-nS-xY0"/>
+                                    <outlet property="titleLabel" destination="nl2-Fg-hyd" id="ft0-sn-qwb"/>
                                     <segue destination="2X3-u5-a0v" kind="show" identifier="showDetails" id="PEN-g8-Nlt"/>
                                 </connections>
                             </tableViewCell>
@@ -53,7 +82,7 @@
             <objects>
                 <tableViewController id="2X3-u5-a0v" customClass="ToDoViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="EQq-kf-FTW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -246,6 +275,6 @@
         <image name="Unchecked" width="44" height="44"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ov0-sb-yHU"/>
+        <segue reference="PEN-g8-Nlt"/>
     </inferredMetricsTieBreakers>
 </document>

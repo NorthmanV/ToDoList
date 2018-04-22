@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		879703FE2087CCCB0062E06B /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879703FD2087CCCB0062E06B /* ToDoViewController.swift */; };
+		87E24E9B208C9F270072C633 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E24E9A208C9F270072C633 /* ToDoCell.swift */; };
 		87FEB5412083690D001B3391 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FEB5402083690D001B3391 /* AppDelegate.swift */; };
 		87FEB5462083690D001B3391 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87FEB5442083690D001B3391 /* Main.storyboard */; };
 		87FEB5482083690E001B3391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87FEB5472083690E001B3391 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		879703FD2087CCCB0062E06B /* ToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		87E24E9A208C9F270072C633 /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		87FEB53D2083690D001B3391 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87FEB5402083690D001B3391 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87FEB5452083690D001B3391 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87E24E99208C9F040072C633 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				87E24E9A208C9F270072C633 /* ToDoCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		87FEB5342083690D001B3391 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 			children = (
 				87FEB55220836F64001B3391 /* Models */,
 				87FEB55520837027001B3391 /* Controllers */,
+				87E24E99208C9F040072C633 /* Views */,
 				87FEB5402083690D001B3391 /* AppDelegate.swift */,
 				87FEB5442083690D001B3391 /* Main.storyboard */,
 				87FEB5472083690E001B3391 /* Assets.xcassets */,
@@ -161,6 +172,7 @@
 				87FEB55420836F7A001B3391 /* ToDo.swift in Sources */,
 				87FEB55720837047001B3391 /* ToDoTableViewController.swift in Sources */,
 				87FEB5412083690D001B3391 /* AppDelegate.swift in Sources */,
+				87E24E9B208C9F270072C633 /* ToDoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

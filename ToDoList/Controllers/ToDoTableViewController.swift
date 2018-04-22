@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ToDoTableViewController: UITableViewController {
+class ToDoTableViewController: UITableViewController, ToDoCellDelegate {
+    
     
     var todos = [ToDo]()
     
@@ -22,16 +23,27 @@ class ToDoTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = editButtonItem
     }
     
+    func checkmarkTapped(sender: ToDoCell) {
+        if let indexPath = tableView.indexPath(for: sender) {
+            var toDo = todos[indexPath.row]
+            toDo.isComplete = !toDo.isComplete
+            todos[indexPath.row] = toDo
+            tableView.reloadRows(at: [indexPath], with: .none)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todos.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCell") as? ToDoCell else {
             fatalError("Could not dequeue a cell")
         }
+        cell.delegate = self
         let todo = todos[indexPath.row]
-        cell.textLabel?.text = todo.title
+        cell.titleLabel?.text = todo.title
+        cell.isCompleteButton.isSelected = todo.isComplete
         return cell
     }
     
